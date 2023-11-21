@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: dbt_bq_public_datasets
+    database: bigquery-public-data
+    schema: cms_synthetic_patient_data_omop
+    tables:
+      - name: person
+        freshness: null
