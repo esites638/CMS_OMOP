@@ -1,15 +1,3 @@
-Welcome to your new dbt project!
+### Overview
 
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
-
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+The Synthetic Patient Data in OMOP Dataset is a synthetic database released by the Centers for Medicare and Medicaid Services (CMS) Medicare Claims Synthetic Public Use Files (SynPUF). It is synthetic data containing 2008-2010 Medicare insurance claims for development and demonstration purposes. It has been converted to the Observational Medical Outcomes Partnership (OMOP) common data model from its original form, CSV, by the open source community as released on GitHub. This public dataset is hosted in Google BigQuery.
