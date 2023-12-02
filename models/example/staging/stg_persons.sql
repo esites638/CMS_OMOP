@@ -2,7 +2,7 @@ with source as (
     select * from {{ source('dbt_bq_public_datasets', 'person') }}
 ),
 
-renamed as (
+stg_person as (
     select 
         {{ adapter.quote("race_concept_id") }},
         {{ adapter.quote("ethnicity_concept_id") }},
@@ -27,4 +27,4 @@ renamed as (
 
 )
 
-select * from renamed
+select * from stg_person

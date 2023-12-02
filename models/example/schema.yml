@@ -1,21 +1,38 @@
-
 version: 2
 
 models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
+  - name: int_persons
+    description: This table serves as the central identity management for all Persons in the database. It contains records that uniquely identify each person or patient, and some demographic information.
     columns:
-      - name: id
-        description: "The primary key for this table"
+      - name: person_id
+        description: Unique identifier for person in dataset
         tests:
-          - unique
+        - unique
+        - not_null
+  - name: int_care_sites
+    description: The CARE_SITE table contains a list of uniquely identified institutional (physical or organizational) units where healthcare delivery is practiced (offices, wards, hospitals, clinics, etc.).
+    columns:
+      - name: care_site_id
+        description: Unique identifier for care sites 
+        tests: 
           - not_null
+          - relationships: 
+              to: ref('int_persons')
+              field: care_site_id
+  - name: int_observations
+    description: The OBSERVATION table captures clinical facts about a Person obtained in the context of examination, questioning or a procedure. Any data that cannot be represented by any other domains, such as social and lifestyle facts, medical history, family history, etc. are recorded here.
+    columns:
+      - name: observation_id
+        description: Unique identifier for observation in dataset
+        tests:
+        - unique
+        - not_null
+  - name: int_concepts
+    description: The Standardized Vocabularies contains records, or Concepts, that uniquely identify each fundamental unit of meaning used to express clinical information in all domain tables of the CDM. Concepts are derived from vocabularies, which represent clinical information across a domain (e.g. conditions, drugs, procedures) through the use of codes and associated descriptions. 
+    columns:
+      - name: concept_id
+        description: Unique identifier for concept in dataset
+        tests:
+        - unique
+        - not_null      
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
