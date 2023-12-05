@@ -1,0 +1,10 @@
+
+my_bigquery_profile:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: your-project-id
+      dataset: your-dataset
+      keyfile: /path/to/service-account.json
