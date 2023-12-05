@@ -1,5 +1,5 @@
 
-my_bigquery_profile:
+CMS_OMOP:
   target: dev
   outputs:
     dev:
